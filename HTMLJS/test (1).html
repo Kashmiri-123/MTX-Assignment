@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+       <title></title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   </head> 
+
+   <body>
+       <div class="container mt-1">
+           <div class="card">
+               <p class="card-title text-center mt-3">
+                   <b class="display-6">Register Your Details</b>
+                   <hr class="my-1">
+               </p>
+               <div class="card-body">
+                   <form id="form_id" method="post" name="myform" >
+                       <div class="form-group m-2 p-2">
+                           <label>Email </label>
+                           <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="Enter email">
+                       </div>
+                       <div class="form-group m-2 p-2">
+                           <label for="name">Name</label>
+                           <input type="text" class="form-control" id="name" placeholder="Name">
+                       </div>
+                       <div class="form-group m-2 p-2">
+                           <label for="country">Country</label>
+                           <input type="text" class="form-control" id="country" placeholder="Country">
+                       </div>
+                       <br/>
+                       <button type="submit" id="submit"  class="btn btn-primary" onclick="onSubmit()">Submit</button>
+                   </form>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-header">
+                   Actions
+               </div>
+               <div class="card-body">
+                   <div class="row">
+                       <div class="col">
+                           <label for="exampleInputPassword1">Search by Name</label>
+                           <input type="text" class="form-control" id="s_name" placeholder="Name">
+                           <br/>
+                           <button class="btn btn-info" onclick="searchByname(id)">Search</button>
+                       </div>
+   
+                       <div class="col">
+                           <label for="exampleInputPassword1">Search by Country</label>
+                           <input type="text" class="form-control" id="s_country" placeholder="Country">
+                           <br/>
+                           <button class="btn btn-info" onclick="searchByCountry(id)">Search</button>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="card">
+               <div class="card-body">
+                   <table class="table table-striped" border="2" id="table">
+                       <thead>
+                           <tr>
+                               <th>Name</th>
+                               <th>Email</th>
+                               <th>Country</th>
+                               <th>Update</th>
+                               <th>Delete</th>
+                           </tr>
+                       </thead>
+                       <tbody></tbody>
+                   </table>
+               </div>
+               <div class="card-footer" style="cursor: pointer;">
+                   <div class="d-grid gap-2 col-6 mx-auto">
+                       <button class="btn btn-primary" onclick="displayAll()" type="button">Display All Registered Users</button>
+                     </div>
+               </div>
+           </div>
+       </div>
+
+       <script type="text/javascript">
+
+           var updateIndex = null;
+           var updateIndex = null;
+           var arrayList = [
+               {mail : "", name : "", country: ""},
+           ];
+
+
+           function searchByname(s_name){
+               let name = document.getElementById("s_name").value;
+               let myTable = document.querySelector('#table');
+               var rowCount = table.rows.length;
+
+               var rowCount = table.rows.length;
+               for (var i = rowCount - 1; i > 0; i--) {
+                   table.deleteRow(i);
+               }
+               
+               let matchingUser = []
+               arrayList.forEach(user => {
+                   if (user.name.includes(name)){
+                       matchingUser.push(user);
+                   }
+               });
+
+               matchingUser.forEach(user => {
+                   let row = document.createElement('tr');
+                   Object.values(user).forEach(data => {
+                       let cell = document.createElement('td');
+                       let textNode = document.createTextNode(data);
+                       cell.appendChild(textNode);
+                       row.appendChild(cell);
+                   })
+                   myTable.appendChild(row);
+               })
+           }
+
+           function searchByCountry(){ 
+               let country = document.getElementById("s_country").value;
+               let myTable = document.querySelector('#table');
+
+               var rowCount = table.rows.length;
+               for (var i = rowCount - 1; i > 0; i--) {
+                   table.deleteRow(i);
+               }
+               
+               let matchingUser = []
+               arrayList.forEach(user => {
+                   if (user.country.includes(country)){
+                       matchingUser.push(user);
+                   }
+               });
+
+               matchingUser.forEach(user => {
+                   let row = document.createElement('tr');
+                   Object.values(user).forEach(data => {
+                       let cell = document.createElement('td');
+                       let textNode = document.createTextNode(data);
+                       cell.appendChild(textNode);
+                       row.appendChild(cell);
+                   })
+                   myTable.appendChild(row);
+               })
+           }
+
+           function displayAll() {
+               event.preventDefault();
+               let myTable = document.querySelector('#table');
+
+               var rowCount = table.rows.length;
+               for (var i = rowCount - 1; i > 0; i--) {
+                   table.deleteRow(i);
+               }
+
+               arrayList.forEach(user => {
+                   let row = document.createElement('tr');
+                   Object.values(user).forEach(data => {
+                       let cell = document.createElement('td');
+                       let textNode = document.createTextNode(data);
+                       cell.appendChild(textNode);
+                       row.appendChild(cell);
+                   })
+                   myTable.appendChild(row);
+               })
+           }
+
+           function onSubmit(){
+               event.preventDefault();
+
+               if (updateIndex === null){                
+                   addData();
+               }
+               else {
+                   UpdateRecord();
+               }
+           }
+
+           function addData(){
+               
+               let mail = document.getElementById("mail").value;
+               let name = document.getElementById("name").value;
+               let country = document.getElementById("country").value;
+
+               if (mail == "" || name == "" || country == ""){
+                   alert("Check input");
+               }
+               else {
+               arrayList.push({mail:mail, name:name, country:country});
+
+               var table = document.getElementById("table").getElementsByTagName('tbody')[0];
+               var row = table.insertRow(table.length);
+
+
+               var cell1 = row.insertCell(0);
+               cell1.innerHTML = arrayList[arrayList.length-1].name;
+
+               var cell2 = row.insertCell(1);
+               cell2.innerHTML = arrayList[arrayList.length-1].mail;
+
+               var cell3 = row.insertCell(2);
+               cell3.innerHTML = arrayList[arrayList.length-1].country;
+
+               var cell4 = row.insertCell(3);
+               cell4.innerHTML = '<button class="btn btn-info" onclick="onUpdate(this)">Update</button>';
+
+               var cell5 = row.insertCell(4);
+               cell5.innerHTML = '<button class="btn btn-danger" onclick="onDelete(this)">Delete</button>';
+               }
+               document.getElementById("mail").value = "";
+               document.getElementById("name").value = "";
+               document.getElementById("country").value = "";
+               alert("Data added successfully");
+
+           }
+
+           function onDelete(td){
+               if(confirm("Do you want to delete this data?")){
+                   row = td.parentElement.parentElement;
+                   document.getElementById('table').deleteRow(row.rowIndex);
+
+                   deleteIndex = arrayList.findIndex(item => item.name === row.cells[0].innerHTML);
+                   arrayList.splice(deleteIndex, 1);
+                   console.log(arrayList);
+                   alert("Data added successfully");
+               }
+
+           }
+
+           function onUpdate(td){
+               updateRow = td.parentElement.parentElement;
+               updateIndex = arrayList.findIndex(item => item.name === updateRow.cells[0].innerHTML);
+               document.getElementById('mail').value = arrayList[updateIndex].mail;
+               document.getElementById('name').value = arrayList[updateIndex].name;
+               document.getElementById('country').value = arrayList[updateIndex].country;
+
+           }
+
+           function UpdateRecord(){
+               let mail = document.getElementById("mail").value;
+               let name = document.getElementById("name").value;
+               let country = document.getElementById("country").value;
+
+               updateRow.cells[0].innerHTML = name;
+               updateRow.cells[1].innerHTML = mail;
+               updateRow.cells[2].innerHTML = country;
+
+               arrayList[updateIndex].mail = mail;
+               arrayList[updateIndex].name = name;
+               arrayList[updateIndex].country = country;
+
+               document.getElementById("mail").value = "";
+               document.getElementById("name").value = "";
+               document.getElementById("country").value = "";
+               alert("Data updated successfully");
+
+           }
+           
+       </script> 
+   </body>
+</html>   
+
+
+
+            

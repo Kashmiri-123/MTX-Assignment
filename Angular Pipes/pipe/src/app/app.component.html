@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <app-header></app-header>
+    
+
+    <!--<input type="text" [(ngModel)]="strDataToConvert"><br>-->
+    <div class="container" style="margin-top: 20px;">
+      <h4 class="box-header" >Uppercase and Lowercase Pipe</h4>
+      <div class="box">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter any text</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+        [(ngModel)]='testStr' placeholder="Enter your text">
+      </div>
+      
+      <br>
+      <br>
+      <table class="table-striped">
+        <tr>
+          <th>The original string</th>
+          <th>Original string in uppercase</th>
+          <th>Original string in lowercase</th>
+        </tr>
+        <tr>
+          <td>{{testStr}}</td>
+          <td>{{testStr | uppercase}}</td>
+          <td>{{testStr | lowercase}}</td>
+        </tr>
+      
+      </table>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Currency Pipe</h4>
+      <div class="box">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Enter any amount</label>
+        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+        [(ngModel)]='money' placeholder="Enter your amount">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <table class="table-striped">
+        <thead>
+        <tr>
+          <th>Different currencies</th>
+          <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Amount represented in YEN</td>
+          <td>{{money|currency:'JPY'}}</td>
+        </tr>
+        <tr>
+          <td>Amount represented in USD</td>
+          <td>{{money|currency:'USD'}}</td>
+        </tr>
+        <tr>
+          <td>Amount represented in INR</td>
+          <td>{{money|currency:'INR'}}</td>
+        </tr>
+        <tr>
+          <td>Amount represented in EURO</td>
+          <td>{{money|currency:'EUR'}}</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Date Pipe</h4>
+      <div class="box">
+        <table class="table-striped">
+          <thead>
+          <tr>
+            <th>Date Formats</th>
+            <th>Output</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Today's Date in mills</td>
+            <td>{{dateMills}}</td>
+          </tr>
+          <tr>
+            <td>Today's Date</td>
+            <td>{{dateMills|date}}</td>
+          </tr>
+          <tr>
+            <td>Date object created</td>
+            <td>{{date}}</td>
+          </tr>
+          <tr>
+            <td>Date in short format</td>
+            <td>{{date|date:'short'}}</td>
+          </tr>
+          <tr>
+            <td>Date in medium format</td>
+            <td>{{date|date:'medium'}}</td>
+          </tr>
+          <tr>
+            <td>Date in long format</td>
+            <td>{{date|date:'long'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >JSON Pipe</h4>
+      <div class="box">
+        <div class="box">
+        <h4 class="box-header">Employee</h4>
+        <p><b>{{empJson|json}}</b></p>
+        </div>
+        <div class="box">
+        <h4 class="box-header">Student Details</h4>
+        <p><b>{{studentJson|json}}</b></p>
+        </div>
+        <div class="box">
+          <h4 class="box-header">Insuarance Details</h4>
+          <p><b>{{insuaranceJson|json}}</b></p>
+          </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Slice Pipes</h4>
+      <div class="box">
+        <table class="table-striped">
+          <thead>
+          <tr>
+            <th>Actions</th>
+            <th>Output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Original decimal value</b></td>
+            <td>{{dec}}</td>
+          </tr>
+          <tr>
+            <td>Decimal in '1.0-2 format'</td>
+            <td>{{dec|number:'1.0-2'}}</td>
+          </tr>
+          <tr>
+            <td>Decimal in '5.4-6 format'</td>
+            <td>{{dec|number:'5.4-6'}}</td>
+          </tr>
+          <tr>
+            <td><b>Original Number</b></td>
+            <td>{{percent}}</td>
+          </tr>
+          <tr>
+            <td>Percent</td>
+            <td>{{percent |percent}}</td>
+          </tr>
+          <tr>
+            <td><b>Original Text</b></td>
+            <td>{{teststr}}</td>
+          </tr>
+          <tr>
+            <td>Slicing from 2nd to 5th char</td>
+            <td>{{teststr|slice: 2:5}}</td>
+          </tr>
+          <tr>
+            <td>Slicing from 2nd position to last two characters</td>
+            <td>{{teststr|slice: 2:-3}}</td>
+          </tr>
+          <tr>
+            <td>Leaving first 4 characters and displayed the rest</td>
+            <td>{{teststr|slice: 4}}</td>
+          </tr>
+        </tbody>
+          </table> 
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Advance Slice Pipes</h4>
+      <div class="box">
+        <div class="row">
+          <div class="form-group col">
+            <label for="exampleInputEmail1">Enter the text</label>
+            <input type="text" class="form-control" id="text" aria-describedby="emailHelp"
+              [(ngModel)]='advTestStr' placeholder="Enter your text">
+          </div>
+          <div class="form-group col">
+            <label for="exampleInputEmail1">Starting position</label>
+            <input type="number" class="form-control" id="startPos" aria-describedby="emailHelp"
+              [(ngModel)]='advTestStrStartPos' placeholder="Enter starting position" >
+          </div>
+          <div class="form-group col">
+            <label for="exampleInputEmail1">Ending position</label>
+            <input type="number" class="form-control"  id="endPos" aria-describedby="emailHelp"
+              [(ngModel)]='advTestStrEndPos' placeholder="Enter ending position" >
+          </div>
+          <br>
+          <br>
+        </div>
+        <table class="table-striped">
+          <tr>
+            <th>Original text</th>
+            <th>Final text</th>
+          </tr>
+          <tr>
+            <td>{{advTestStr}}</td>
+            <td>{{advTestStr|strSlicer:advTestStrStartPos:advTestStrEndPos}}</td>
+          </tr>
+        </table>
+        <br>
+        <div *ngIf='alert' class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Please check this!</strong> You should check in on some of those fields below.
+          <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Temp Pipes</h4>
+      <div class="box">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Enter the temperature in Fahrenheit</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+          [(ngModel)]='iFar' placeholder="Enter your text">
+        </div>
+        <table class="table-striped">
+          <tr>
+            <th>The original data in far</th>
+            <th>Far to Cel</th>
+          </tr>
+          <tr>
+            <td>{{iFar}}</td>
+            <td>{{iFar | tempConverter:'toCel'|number:'1.0-2'}}</td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Enter the temperature Celcius</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+          [(ngModel)]='iCel' placeholder="Enter your text">
+        </div>
+        <table class="table-striped">
+          <tr>
+            <th>The original data in cel</th>
+            <th>Cel to Far</th>
+          </tr>
+          <tr>
+            <td>{{iCel}}</td>
+            <td>{{iCel | tempConverter:'toFar'|number:'1.0-2'}}</td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >String Pipes</h4>
+      <div class="box"> 
+        <div class="form-group">
+          <label for="exampleInputEmail1">Enter the string in upper case</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+          [(ngModel)]='iText' placeholder="Enter your text">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Change text" (click)="changeText()">
+        <br>
+        <br>
+        <table class="table-striped">
+          <tr>
+            <th>The original text</th>
+            <th>Uppercase</th>
+            <th>Lowercase</th>
+            <th>Capitalisize</th>
+          </tr>
+          <tr>
+            <td>{{iText}}</td>
+            <td>{{iText | strConvertor:'toUpp'}}</td>
+            <td>{{iText | strConvertor:'toLow'}}</td>
+            <td>{{iText | strConvertor:'toCap'}}</td>
+          </tr>
+        </table>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Pure / Impure Pipes</h4>
+      <div class="box">
+        <div class="form-group">
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+          [(ngModel)]='policyHolderName' (ngModelChange)="Search()" placeholder="Enter your text">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Change first Name">
+        <br>
+        <br>
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                <th>Policy Number</th>
+                <th>Holder Name</th>
+                <th>UMaturity Amount</th>
+                <th>Nominee Name</th>
+                <th>Monthly Emi</th>
+                <th>Duration</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ph of policy_Holders">
+              <td>{{ ph.policyNo }}</td>
+              <td>{{ ph.policyHolderName }}</td>
+              <td>{{ ph.amountOnMaturity}}</td>
+              <td>{{ ph.nominee_name }}</td>
+              <td>{{ ph.monthly_emi }}</td>
+              <td>{{ ph.duration }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Pure / Impure Pipes</h4>
+      <div class="box">
+        <input type="text"   [(ngModel)]="searchTerm"  placeholder="Enter name" >
+        <button (click)="changeProperty()">change by Property</button>
+        <button (click)="changeReference()">change by Reference</button>
+        <hr>
+        <ul>
+	        <li *ngFor="let user of users | filter:searchTerm">{{user.name}}</li>
+        </ul>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <h4 class="box-header" >Pure / Impure Pipes</h4>
+      <div class="box">
+      </div>
+
+    </div>
+
+    <router-outlet></router-outlet>
+    <br>
+    <p style="margin-bottom: 50px;"></p>
+    <app-footer></app-footer>
+  </body>
+</html>
+

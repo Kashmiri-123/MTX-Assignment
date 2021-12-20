@@ -1,0 +1,39 @@
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+th{
+    background-color: rgb(175, 139, 139);
+    color: white;
+}
+.box{
+    border-style:solid;
+    border-color: rgb(51, 50, 50);
+    padding: 20px;
+    border-width: 2px;
+}
+
+.box-header{
+    text-align: center;
+    background-color: rgb(51, 50, 50);
+    color: white;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

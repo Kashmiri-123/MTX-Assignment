@@ -1,0 +1,30 @@
+<html>
+   <head>
+      <title>Home</title>
+   </head>
+   
+   <body>
+      <h1>Employee Details</h1>
+      <ul>
+          <li>
+            <label for=""> ID : </label>
+            <p id="ID"></p>
+          </li>
+          <li>
+            <label for=""> Name : </label>
+            <p id="NAME"></p>
+          </li>
+          <li>
+            <label for=""> Dept : </label>
+            <p id="DEPT"></p>
+          </li>
+      </ul>
+
+      <script type="text/javascript">
+        var obj = {"id":1, "name":"Kashmiri Mahanta", "dept":"IT"}
+        document.getElementById("ID").innerHTML = obj.id;
+        document.getElementById("NAME").innerHTML = obj.name;
+        document.getElementById("DEPT").innerHTML = obj.dept;
+      </script>
+   </body>
+</html>

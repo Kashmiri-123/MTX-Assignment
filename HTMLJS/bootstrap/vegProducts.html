@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Store | Veg Products</title>
+    <link rel="shortcut icon" type="image/jpg" href="https://image.freepik.com/free-vector/detailed-chef-logo-template_23-2148987940.jpg"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+      body, html {
+        height: 100%;
+      }
+
+      .parallax {
+        background-image: url("1.png");
+
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .fullView {
+          position: relative;
+          text-align: center;
+          color: white;
+      }
+      .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+
+      .rounded{
+          border-radius: 10%;
+          padding: 10px;
+          margin-top: 20px;
+      }
+    </style>
+
+</head>
+<body class="parallax"> 
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="main.html">
+          <img 
+              src="https://image.freepik.com/free-vector/detailed-chef-logo-template_23-2148987940.jpg" 
+              alt=""
+              height="50px"
+              width="50px"    
+          >
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="vegProducts.html">Veg Products</a>
+                <a class="dropdown-item" href="nonVegProducts.html">Non-Veg Products</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Others</a>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#services">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#ourTeam">Our Team</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+          <div class="d-flex" style="cursor: pointer">
+            <p class="m-1">example@example.com</p> &nbsp;&nbsp; &nbsp; &nbsp;
+            <a href="cart.html" class="btn btn-outline-info" type="submit">Cart</a>
+            &nbsp;&nbsp; &nbsp; &nbsp;
+            <a href="login.html" class="btn btn-outline-danger" type="submit">LogOut</a>
+          </div>
+          
+        </div>
+      </div>
+  </nav>
+
+    <div class="parallax">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel indicators -->
+          <ol class="carousel-indicators">
+              <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+              <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+              <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+          </ol>
+          
+          <!-- Wrapper for carousel items -->
+          <div class="carousel-inner" style="height: 845;">
+              <div class="carousel-item active">
+                  <div class="fullView">
+                    <img 
+                      src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" 
+                      class="d-block w-100" 
+                      alt="Snow" 
+                      height="850px" 
+                      width="100%"
+                    >
+                    <div class="centered">
+                        <h3 class="display-3">
+                            <b>FOOD STORE</b>
+                        </h3>
+                        <h4 class="display-6">
+                            <p>Slide 1</p>
+                        </h4>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="fullView">
+                  <div class="fullView">
+                    <img 
+                      src="https://images.unsplash.com/photo-1544986581-efac024faf62?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" 
+                      class="d-block w-100 background" 
+                      alt="Snow" 
+                      height="850px" 
+                      width="100%"
+                    >
+                    <div class="centered">
+                        <h3 class="display-3">
+                            <b>Group 1 !!</b>
+                        </h3>
+                        <h4 class="display-6">
+                            <p>Slide 2</p>
+                        </h4>
+                    </div>
+                  </div>
+              </div>
+              </div>
+              <div class="carousel-item">
+                  <div class="fullView">
+                    <img 
+                      src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" 
+                      class="d-block w-100" 
+                      alt="Snow" 
+                      height="850px" 
+                      width="100%"
+                    >
+                    <div class="centered">
+                        <h3 class="display-3">
+                            <b>Group 1 !!</b>
+                        </h3>
+                        <h4 class="display-6">
+                            <p>Slide 3</p>
+                        </h4>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      
+          <!-- Carousel controls -->
+          <a class="carousel-control-prev" href="#myCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+          </a>
+      </div>
+    </div>
+
+    <div class="container rounded" id="product">
+        <div class="card">
+            <div class="header p-3 text-center display-6">Our Veg Menu</div>
+            <hr class="my-1">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row m-3">
+                        <div class="col-sm-12 col-md-3 col-lg-4 p-2">
+                            <div class="card" style="width: 18rem;">
+                                <img 
+                                  src="https://www.deputy.com/uploads/2018/10/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image1-min-1024x569.png" 
+                                  class="card-img-top" alt="..."
+                                >
+                                <div class="card-body">
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">View Product</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 col-lg-4 p-2">
+                            <div class="card" style="width: 18rem;">
+                                <img 
+                                  src="https://www.deputy.com/uploads/2018/10/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image3-min-1024x569.png" 
+                                  class="card-img-top" alt="..."
+                                >
+                                <div class="card-body">
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">View Product</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 col-lg-4 p-2">
+                            <div class="card" style="width: 18rem;">
+                                <img 
+                                  src="https://www.deputy.com/uploads/2018/10/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image2-min-1024x569.png" 
+                                  class="card-img-top" alt="..."
+                                >
+                                <div class="card-body">
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">View Product</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="col-sm-12 col-md-3 col-lg-4 p-2">
+                            <div class="card" style="width: 18rem;">
+                                <img 
+                                  src="https://www.deputy.com/uploads/2018/10/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image1-min-1024x569.png" 
+                                  class="card-img-top" alt="..."
+                                >
+                                <div class="card-body">
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">View Product</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 col-lg-4 p-2">
+                            <div class="card" style="width: 18rem;">
+                                <img 
+                                  src="https://www.deputy.com/uploads/2018/10/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image1-copy-5-min-1024x569.png" 
+                                  class="card-img-top" alt="..."
+                                >
+                                <div class="card-body">
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">View Product</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-12 col-md-3 col-lg-4 p-2">
+                            <div class="card" style="width: 18rem;">
+                                <img 
+                                  src="https://www.deputy.com/uploads/2018/10/The-Most-Popular-Menu-Items-That-You-should-Consider-Adding-to-Your-Restaurant_Content-image1-copy-3-min-1024x569.png" 
+                                  class="card-img-top" alt="..."
+                                >
+                                <div class="card-body">
+                                <h5 class="card-title">Product 2</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" type="button">View Product</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <br>
+    <br>
+    <footer class="bg-light rounded">
+      <div class="container py-5">
+        <div class="row py-4">
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+              <h2 class="text-uppercase">Kashmiri Food Store</h2>
+            <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+            <ul class="list-inline mt-4">
+              <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fa fa-pinterest"></i></a></li>
+              <li class="list-inline-item"><a href="#" target="_blank" title="vimeo"><i class="fa fa-vimeo"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+            <h6 class="text-uppercase font-weight-bold mb-4">Products</h6>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#product" class="text-muted">Veg Items</a></li>
+              <li class="mb-2"><a href="#product" class="text-muted">Non Veg Items</a></li>
+              <li class="mb-2"><a href="#product" class="text-muted">Others </a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+            <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+              <li class="mb-2"><a href="#about" class="text-muted">Our Team</a></li>
+              <li class="mb-2"><a href="#product" class="text-muted">Wishlist</a></li>
+              <li class="mb-2"><a href="#product" class="text-muted">Our Products</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-lg-0">
+            <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.</p>
+            <div class="p-1 rounded border">
+              <div class="input-group">
+                <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-outline-info">subscribe</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="bg-light py-4">
+        <div class="container text-center">
+          <a href="#" class="text-muted mb-0 py-2">© 2021 Go to Top</a>
+        </div>
+      </div>
+    </footer>
+    
+</body>
+</html>
